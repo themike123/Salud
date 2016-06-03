@@ -60,37 +60,115 @@
   </nav>
 
     <div class="container">
-      <div class="divider"></div>
-      <div class="section">
-        <h5>Metabolismo basal:</h5>
-        <h3>{{tmb.basal}}</h3>
-      </div>
 
-      <div class="divider"></div>
-      <div class="section">
-        <h5>Calorías necesarias para mantener el peso: </h5>
-        <h3>{{tmb.cal}}</h3>
-      </div>
-
-      <!--div class="row">
-        <div class="col s12 m7">
-          <div class="card">
-            <div class="card-content">
-              <strong>Metabolismo basal:{{tmb.basal}}</strong>
-              <strong>Calorías necesarias para mantener el peso::{{tmb.cal}}</strong>
-              <p>I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively.</p>
-            </div>
-            <div class="card-action">
-
-            </div>
+      <div id="cargar">
+        <div class="preloader-wrapper big active">
+        <div class="spinner-layer spinner-blue-only">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div><div class="gap-patch">
+            <div class="circle"></div>
+          </div><div class="circle-clipper right">
+            <div class="circle"></div>
           </div>
         </div>
-      </div-->
+      </div>
+      </div>
+
+
+      <div id="contenido" style="display:none">
+        <!--div class="divider"></div>
+        <div class="section">
+          <h5>Metabolismo basal:</h5>
+          <h3><div ng-bind="tmb.basal"></div></h3>
+        </div>
+
+        <div class="divider"></div>
+        <div class="section">
+          <h5>Calorías necesarias para mantener el peso: </h5>
+          <h3><div ng-bind="tmb.cal"></div></h3>
+        </div>
+        <div class="divider"></div>
+        <div class="section">
+          <h5>ICM</h5>
+          <h3><div ng-bind="tmb.imc"></div></h3>
+        </div-->
+
+        <div class="section">
+          <h5>Su Índice de Masa Coporal(ICM):</h5>
+          <h3><div ng-bind="tmb.imc"></div></h3>
+          <div class="divider"></div>
+          <div id="mensaje">
+            <p>Busque su ICM en la tabla que se muestra a continuación</p>
+          </div>
+        </div>
+
+        <table>
+        <thead>
+          <tr>
+              <th data-field="id">ICM</th>
+              <th data-field="name">Clasificación</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Menor a 18.5</td>
+            <td>Peso insuficiente</td>
+          </tr>
+
+          <tr>
+            <td>18.5 a 24.9</td>
+            <td>Peso Normal</td>
+          </tr>
+
+          <tr>
+            <td>25 a 26.9</td>
+            <td>Sobrepeso grado I</td>
+          </tr>
+
+          <tr>
+            <td>27 a 29.9</td>
+            <td>Sobrepeso grado II (preobesidad)</td>
+          </tr>
+
+          <tr>
+            <td>30 a 39.9</td>
+            <td>Obesidad de tipo I</td>
+          </tr>
+
+          <tr>
+            <td>35 a 39.9</td>
+            <td>Obesidad de tipo II</td>
+          </tr>
+
+          <tr>
+            <td>40 a 49.9</td>
+            <td>Obesidad de tipo III (mórbida)</td>
+          </tr>
+
+          <tr>
+            <td>Mayor de 50</td>
+            <td>Obesidad de tipo IV (extrema)</td>
+          </tr>
+
+        </tbody>
+      </table>
+      </div>
+
+
     </div>
     <script>
        $(document).ready(function() {
           $('select').material_select();
+          //$('#contenido').hide();
+          //$('#contenido').style.display = "none";
+          //document.getElementById("myDIV").style.display = "none";
+
+          $(window).load(function () {
+            $('#cargar').hide();
+            $('#contenido').show();
+          });
+
       });
     </script>
   </body>

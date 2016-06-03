@@ -2,7 +2,9 @@
 var app = angular.module('admin', [])
 
 app.controller('glosarioController', function($scope, $http){
+
   $scope.tmb = JSON.parse(localStorage.getItem("tmb"));
+
   //TMB Mujer = 655 + (9,6 * P) + (1,8 * A) – (4,7 * E)
   //TMB Hombre = 66 + (13,7 * P) + (5 * A) – (6,8 * E)
 
@@ -31,15 +33,20 @@ app.controller('glosarioController', function($scope, $http){
     //Calorias necesarias para matener peso
     CalNecesarias = CalNecesarias.toFixed(2);
     CalNecesarias = Math.round(CalNecesarias);
+    //calculo de su indice de masa corporal
+    var icm=($scope.peso/($scope.estatura*$scope.estatura) ) * 10000;
+    icm = icm.toFixed(1);
     if(typeof(Storage) !== "undefined"){
       if (localStorage.getItem("tmb")!=null) {
         localStorage.removeItem("tmb");
         localStorage.clear();
       }
-        localStorage.setItem("tmb", JSON.stringify({'basal':TMB ,'cal':CalNecesarias}));
+        localStorage.setItem("tmb", JSON.stringify({'imc': icm,'basal':TMB ,'cal':CalNecesarias}));
       }else{
         console.log("No se pudo guardar la información en memoria");
       }
+
+      //$scope.icm = ($scope.peso/($scope.estatura*$scope.estatura) ) * 1000;
     window.location.href = 'resultadoTMB.html';
   };
 });

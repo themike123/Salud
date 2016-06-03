@@ -9,3 +9,9 @@
 .icon-block {
   padding: 0 15px;
 }
+
+#cargar{
+  position: absolute; /* podría ser relative */
+  left: 40%;
+  top: 40%;
+}
