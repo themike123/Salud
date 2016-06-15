@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='admin'>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+
+  <title>Salud</title>
+
+  <!-- CSS  -->
+  <!--link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"-->
+  <script src="js/angular.min.js"></script>
+<script src="js/app_admin.js"></script>
+  <link href="css/icons_material.css" type="text/css" rel="stylesheet">
+  <script type="text/javascript" src="cordova.js"></script>
+  <script src="js/jquery-2.0.0.min.js"></script>
+  <script src="js/general.js"></script>
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" />
+  <link href="css/materialize.min.css" type="text/css" rel="stylesheet" />
+  <script type="text/javascript" src="js/materialize.js"></script>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link rel="stylesheet" href="font-awesome-4.3.0/css/font-awesome.min.css">
+  <link rel="shortcut icon" href="favicon (7).ico" type="image/x-icon">
+
+  <link rel="icon" href="favicon (7).ico" type="image/x-icon">
+
+  <script src="js/materialize.js"></script>
+
+  <script src="js/init.js"></script>
+</head>
+<body ng-controller='glosarioController'>
+	<style>
+		.fa{
+			color:#ef6c00;
+		}
+	</style>
+
+   <nav class="blue darken-1" role="navigation">
+   <!--nav -->
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo">Salud</a>
+      <a href="index.html" ><i class='mdi-navigation-arrow-back'></i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">Link1</a></li>
+        <li><a href="#">Link2</a></li>
+        <li><a href="#">Link3</a></li>
+
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+       <li><a href="#">Link1</a></li>
+        <li><a href="#">Link2</a></li>
+        <li><a href="#">Link3</a></li>
+      </ul>
+    </div>
+  </nav>
+
+    <div class="container">
+
+      <div id="cargar">
+        <div class="preloader-wrapper big active">
+        <div class="spinner-layer spinner-blue-only">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div><div class="gap-patch">
+            <div class="circle"></div>
+          </div><div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+
+      <div id="contenido" style="display:none">
+        <br>
+        <form  ng-submit="Su1RM()">
+          <div class="row">
+            <h5>Ingrese su 1RM</h5>
+
+            <div class="input-field col s12">
+              <!--i class="mdi-av-closed-caption prefix"></i-->
+              <i class="material-icons prefix">assessment</i>
+              <input autocomplete='off' id="militar" name="militar" ng-model="militar" type="text">
+              <label for="1rm"  class="center-align">Militar en Kilogramos</label>
+            </div>
+
+            <div class="input-field col s12">
+              <!--i class="mdi-av-closed-caption prefix"></i-->
+              <i class="material-icons prefix">assessment</i>
+              <input autocomplete='off' id="muerto" name="muerto" ng-model="muerto" type="text">
+              <label for="1rm"  class="center-align">Peso Muerto en Kilogramos</label>
+            </div>
+
+            <div class="input-field col s12">
+              <!--i class="mdi-av-closed-caption prefix"></i-->
+              <i class="material-icons prefix">assessment</i>
+              <input autocomplete='off' id="press" name="press" ng-model="press" type="text">
+              <label for="1rm"  class="center-align">Press Banca en Kilogramos</label>
+            </div>
+
+            <div class="input-field col s12">
+              <!--i class="mdi-av-closed-caption prefix"></i-->
+              <i class="material-icons prefix">assessment</i>
+              <input autocomplete='off' id="sentadilla" name="sentadilla" ng-model="sentadilla" type="text">
+              <label for="1rm"  class="center-align">Sentadilla en Kilogramos</label>
+            </div>
+
+            <br>
+            <p>
+              RM significa repetición máxima. Así <strong>1RM</strong> sería el peso máximo que podemos
+               levantar una vez en un determinado ejercicio realizando la técnica de forma perfecta.
+            </p>
+            <br>
+            <button type="submit" class="col-md-12 col-sm-12 col-xs-12 col-lg-12 btn btn-primary btn-rounded waves-effect waves-light">Finalizar</button>
+          </div>
+
+        </form>
+      </div>
+    <script>
+       $(document).ready(function() {
+          $('select').material_select();
+          //$('#contenido').hide();
+          //$('#contenido').style.display = "none";
+          //document.getElementById("myDIV").style.display = "none";
+
+          $(window).load(function () {
+            $('#cargar').hide();
+            $('#contenido').show();
+          });
+
+      });
+    </script>
+  </body>
+</html>

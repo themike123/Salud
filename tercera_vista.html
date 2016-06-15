@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='admin'>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+
+  <title>Salud</title>
+
+  <!-- CSS  -->
+  <!--link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"-->
+  <script src="js/angular.min.js"></script>
+<script src="js/app_admin.js"></script>
+  <link href="css/icons_material.css" type="text/css" rel="stylesheet">
+  <script type="text/javascript" src="cordova.js"></script>
+  <script src="js/jquery-2.0.0.min.js"></script>
+  <script src="js/general.js"></script>
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" />
+  <link href="css/materialize.min.css" type="text/css" rel="stylesheet" />
+  <script type="text/javascript" src="js/materialize.js"></script>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link rel="stylesheet" href="font-awesome-4.3.0/css/font-awesome.min.css">
+  <link rel="shortcut icon" href="favicon (7).ico" type="image/x-icon">
+
+  <link rel="icon" href="favicon (7).ico" type="image/x-icon">
+
+  <script src="js/materialize.js"></script>
+
+  <script src="js/init.js"></script>
+</head>
+<body ng-controller='glosarioController'>
+	<style>
+		.fa{
+			color:#ef6c00;
+		}
+	</style>
+
+   <nav class="blue darken-1" role="navigation">
+   <!--nav -->
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo">Salud</a>
+      <a href="segunda_vista.html" ><i class='mdi-navigation-arrow-back'></i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">Link1</a></li>
+        <li><a href="#">Link2</a></li>
+        <li><a href="#">Link3</a></li>
+
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+       <li><a href="#">Link1</a></li>
+        <li><a href="#">Link2</a></li>
+        <li><a href="#">Link3</a></li>
+      </ul>
+    </div>
+  </nav>
+
+    <div class="container">
+
+      <div id="cargar">
+        <div class="preloader-wrapper big active">
+        <div class="spinner-layer spinner-blue-only">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div><div class="gap-patch">
+            <div class="circle"></div>
+          </div><div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <div id="contenido" style="display:none">
+
+        <br><p>Seleccione el tipo de <strong>ejercicio(Torso o Pierna) que realizara por dia</strong>, intercambiando los ejercicios por dia.</p>
+            <p>
+              <strong>Ejemplo:</strong>
+              Lunes:Pierna,
+              Martes:Torso,
+              Miercoles:Pierna,
+              Jueves:Torso
+            </p>
+          <h5>Pierna</h5>
+          <img class="circle responsive-img" src="img/pierna.jpg" width="100%" height="100%">
+          <h5>Torso</h5>
+          <img class="circle responsive-img" src="img/torso.jpg" width="100%" height="100%">
+
+          <form  ng-submit="PiernaTorso()">
+
+          <div class="row">
+            <h5><div ng-bind="dias.dia1"></div></h5>
+            <div class="input-field col s12">
+              <i class="material-icons prefix">group_work</i>
+              <select id="diaEjercicio1" name="diaEjercicio1" ng-model="diaEjercicio1" >
+                <option value="Pierna" selected="selected">Pierna</option>
+                <option value="Torso" >Torso</option>
+              </select>
+            <label>Seleccione su Ejercicio</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <h5><div ng-bind="dias.dia2"></div></h5>
+            <div class="input-field col s12">
+              <i class="material-icons prefix">group_work</i>
+              <select id="diaEjercicio2" name="diaEjercicio2" ng-model="diaEjercicio2" >
+                <option value="Pierna" selected="selected">Pierna</option>
+                <option value="Torso" >Torso</option>
+              </select>
+            <label>Seleccione su Ejercicio</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <h5><div ng-bind="dias.dia3"></div></h5>
+            <div class="input-field col s12">
+              <i class="material-icons prefix">group_work</i>
+              <select id="diaEjercicio3" name="diaEjercicio3" ng-model="diaEjercicio3" >
+                <option value="Pierna" selected="selected">Pierna</option>
+                <option value="Torso" >Torso</option>
+              </select>
+            <label>Seleccione su Ejercicio</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <h5><div ng-bind="dias.dia4"></div></h5>
+            <div class="input-field col s12">
+              <i class="material-icons prefix">group_work</i>
+              <select id="diaEjercicio4" name="diaEjercicio4" ng-model="diaEjercicio4" >
+                <option value="Pierna" selected="selected">Pierna</option>
+                <option value="Torso" >Torso</option>
+              </select>
+            <label>Seleccione su Ejercicio</label>
+            </div>
+          </div>
+          <button type="submit" class="col-md-12 col-sm-12 col-xs-12 col-lg-12 btn btn-primary btn-rounded waves-effect waves-light">Siguiente</button>
+          </form>
+      </div>
+    </div>
+    <script>
+       $(document).ready(function() {
+          $('select').material_select();
+          $('select').material_select('destroy');
+
+          $(window).load(function () {
+            $('#cargar').hide();
+            $('#contenido').show();
+          });
+
+      });
+    </script>
+  </body>
+</html>
