@@ -49,7 +49,7 @@
         <!--li><a href="#!" class="brand-logo">Salud</a></li-->
         <li><h1 class="logo-wrapper"><a href="#!" class="brand-logo">GymCoach</a></h1></li>
       </ul>
-      
+
       <ul class="side-nav" id="mobile-demo">
         <div class="container">
           <br><img class="circle responsive-img" src="img/avatar.png" width="100px">
@@ -79,39 +79,50 @@
     </div>
 
     <div id="contenido" style="display:none">
-      <div class="row" id="camino">
+      <h4>Índice de Masa Corporal</h4>
+      <h3>{{tmb.imc}}</h3>
 
-          <div id="modal1" class="modal modal-fixed-footer">
+      <br><br>
+      <h5>Días de Ejercicio</h5>
+      <table  class="centered">
+        <thead>
+          <tr><th data-field="id">{{dias.dia1}}</th>
+              <th data-field="id">{{dias.dia2}}</th>
+              <th data-field="id">{{dias.dia3}}</th>
+              <th data-field="id">{{dias.dia4}}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{diaEjercicio.dia1}}</td>
+            <td>{{diaEjercicio.dia2}}</td>
+            <td>{{diaEjercicio.dia3}}</td>
+            <td>{{diaEjercicio.dia4}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <br><br>
 
-            <form  ng-submit="Progresion()">
-            <div class="modal-content">
-              <strong>REINICIAMOS LA PROGRESIÓN</strong>
-              <!--h5>REINICIAMOS LA PROGRESIÓN</h5-->
-              <p>Añadimos 2.5kg a Banca y Militar</p>
-              <input id="progresion1" name="progresion1" ng-model="progresion1" type="text">
+      <h5>1RM</h5>
+      <table  class="centered">
+        <thead>
+          <tr><th data-field="id">Militar</th>
+              <th data-field="id">Peso Muerto</th>
+              <th data-field="id">Press Banca</th>
+              <th data-field="id">Sentadilla</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{mi1rm.uno}}</td>
+            <td>{{mi1rm.dos}}</td>
+            <td>{{mi1rm.tres}}</td>
+            <td>{{mi1rm.cuatro}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <br><br>
 
-              <p>Añadimos 5kg a Sentadilla y Peso Muerto</p>
-              <input id="progresion2" name="progresion2" ng-model="progresion2" type="text">
-
-              <p>Pesos Anteriores:
-                <strong>Militar:</strong>{{mi1rm.uno}}
-                <strong>Press Banca:</strong>{{mi1rm.tres}}
-                <strong>Sentadilla:</strong>{{mi1rm.cuatro}}
-                <strong>Peso Muerto:</strong>{{mi1rm.dos}}
-              </p>
-
-              <p>
-                <strong>Es libre de modificar el peso de progresión</strong>
-              </p>
-
-            </div>
-            <div class="modal-footer">
-              <button type="submit"  class="waves-effect waves-green btn-flat ">ACEPTAR</button>
-            </div>
-            </form>
-          </div>
-
-      </div>
     </div>
     <script>
        $(document).ready(function() {

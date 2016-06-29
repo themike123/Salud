@@ -43,7 +43,7 @@
    <nav class="blue darken-1" role="navigation">
    <!--nav -->
     <div class="nav-wrapper">
-      <a href="#!" class="brand-logo">Salud</a>
+      <a href="#!" class="brand-logo">GymCoach</a>
       <a href="segunda_vista.html" ><i class='mdi-navigation-arrow-back'></i></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="#">Link1</a></li>
@@ -78,19 +78,18 @@
       <div id="contenido" style="display:none">
 
         <br><p>Seleccione el tipo de <strong>ejercicio(Torso o Pierna) que realizara por dia</strong>, intercambiando los ejercicios por dia.</p>
-            <p>
-              <strong>Ejemplo:</strong>
-              Lunes:Pierna,
-              Martes:Torso,
-              Miercoles:Pierna,
-              Jueves:Torso
-            </p>
-          <h5>Pierna</h5>
-          <img class="circle responsive-img" src="img/pierna.jpg" width="100%" height="100%">
-          <h5>Torso</h5>
-          <img class="circle responsive-img" src="img/torso.jpg" width="100%" height="100%">
+            <strong>Se seleccionó</strong>
+            <p id="select1"></p>
 
-          <form  ng-submit="PiernaTorso()">
+          <h5>Pierna</h5>
+
+          <a ng-click="Pierna()"><img class="circle responsive-img" src="img/pierna.jpg" width="100%" height="100%"></a>
+          <h5>Torso</h5>
+          <a ng-click="Torso()"><img class="circle responsive-img" src="img/torso.jpg" width="100%" height="100%"></a>
+          <br><br>
+          <a href="cuarta_vista.html" class="col-md-12 col-sm-12 col-xs-12 col-lg-12 btn btn-primary btn-rounded waves-effect waves-light">Siguiente</a>
+
+          <!--form ng-submit="PiernaTorso()" >
 
           <div class="row">
             <h5><div ng-bind="dias.dia1"></div></h5>
@@ -140,7 +139,7 @@
             </div>
           </div>
           <button type="submit" class="col-md-12 col-sm-12 col-xs-12 col-lg-12 btn btn-primary btn-rounded waves-effect waves-light">Siguiente</button>
-          </form>
+        </form-->
       </div>
     </div>
     <script>
